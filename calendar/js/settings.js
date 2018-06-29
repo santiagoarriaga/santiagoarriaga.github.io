@@ -32663,7 +32663,7 @@ var config = {
 
 if (typeof angular !== "undefined") {
   angular.module("risevision.widget.googleCalendar.config", [])
-    .value("defaultLayout", "http://s3.amazonaws.com/widget-google-calendar/0.1.0/dist/widget.html");
+    .value("defaultLayout", "https://santiagoarriaga.github.io/calendar/widget.html");
 
   angular.module("risevision.common.i18n.config", [])
     .constant("LOCALES_PREFIX", "locales/translation_")
