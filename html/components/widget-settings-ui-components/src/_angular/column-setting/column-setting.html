@@ -1,0 +1,71 @@
+<div class="panel panel-default">
+  <div class="collapse-panel panel-heading">
+    <a href="" ondragstart="return false;"
+    ng-class="{'panel-heading':true, collapsed:!collapse}" ng-click="collapse=!collapse">
+       {{column.name | translate}}
+    </a>
+    <a href="" ondragstart="return false;" class="fa fa-minus-circle fa-lg remove-column-button" ng-click="remove()"></a>
+  </div>
+  <div ng-class="{'panel-collapse':true, collapse:true, in:collapse}">
+    <div class="panel-body">
+
+      <!-- Numeric data column -->
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="column.numeric">{{'column.numeric' | translate}}
+        </label>
+        <span class="text-danger" style="float:right">
+          {{'column.note' | translate}}
+        </span>
+      </div>
+
+      <font-setting font-data="column.fontStyle">
+      </font-setting>
+
+      <div class="row">
+
+        <!-- Header Text -->
+        <div class="col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label for="column-header-text">
+              {{'column.header-text.label' | translate}}
+            </label>
+            <input type="text" ng-model="column.headerText" class="form-control">
+          </div>
+        </div>
+
+        <!-- Width -->
+        <div class="col-sm-3 col-xs-12">
+          <div class="form-group">
+            <label for="column-width">
+              {{'column.width' | translate}}
+            </label>
+            <div class="input-group">
+              <input type="number" ng-model="column.width" class="form-control">
+              <span class="input-group-addon">{{'common.units.pixels' | translate}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Color Conditions -->
+        <div class="col-sm-3 col-xs-12">
+          <div class="form-group">
+            <label for="column-color-condition">
+                {{'column.color-condition.label' | translate}}
+              </label>
+            <select class="form-control" ng-model="column.colorCondition"
+              ng-disabled="!column.numeric">
+              <option value="none">{{'column.color-condition.none' | translate}}</option>
+              <option value="change-up">{{'column.color-condition.change-up' | translate}}</option>
+              <option value="change-down">{{'column.color-condition.change-down' | translate}}</option>
+              <option value="value-positive">{{'column.color-condition.value-positive' | translate}}</option>
+              <option value="value-negative">{{'column.color-condition.value-negative' | translate}}</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

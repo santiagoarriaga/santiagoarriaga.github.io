@@ -1,0 +1,18 @@
+<div class="section">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="form-group">
+				<label for="columns" class="control-label">{{'column.select-title' | translate}}</label>
+				<select class="column-selector form-control" ng-model="selectedColumn"
+				ng-options="column.name | translate for column in columnNames | filter:show track by column.id"
+				ng-change="addColumn()" ng-disabled="disabled"></select>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel-group">
+				<column-setting column="column" ng-repeat="column in columns"></column-setting>
+			</div>
+	</div>
+</div>

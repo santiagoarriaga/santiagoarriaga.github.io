@@ -1,0 +1,21 @@
+{
+  "name": "rv-common-i18n",
+  "version": "1.4.32",
+  "license": "GPL3",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "www"
+  ],
+  "dependencies": {
+    "angular-translate": "~2.13.1",
+    "angular-translate-loader-static-files": "~2.13.1"
+  },
+  "resolutions": {
+    "angular": "1.2.18"
+  }
+}
