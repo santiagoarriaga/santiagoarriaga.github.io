@@ -2,62 +2,22 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>CefSharp Javascript Binding Demo</title>
-
-    <script type="text/javascript">
-        CefSharp.RegisterEvent = async function (boundObjName, boundObjMethodName, targetObj, evtName)
-        {
-            await CefSharp.BindObjectAsync(boundObjName);
-
-            let addEvent = function ()
-            {
-                var isElement = targetObj instanceof HTMLElement;
-                var elem = isElement ? targetObj : document.getElementById(targetObj);
-
-                elem.addEventListener(evtName, function (e)
-                {
-                    var evtArgs = { id: e.target.id, tagName: e.target.tagName, link: e.target.getAttribute('data-link') };
-                    window[boundObjName][boundObjMethodName](evtName, evtArgs);
-                });
-            };
-
-            switch (document.readyState)
-            {
-                case "loading":
-                    {
-                        // Document still loading
-                        document.addEventListener("DOMContentLoaded", function (event)
-                        {
-                            addEvent();
-                        });
-
-                        break;
-                    }
-                case "interactive":
-                case "complete":
-                    {
-                        addEvent();
-
-                        break;
-                    }
-            }
-        };
-
-        (function ()
-        {
-            CefSharp.RegisterEvent('boundEventHandler', 'raiseEvent', 'linkButton', 'click');
-        })();
-    </script>
+  <meta charset="utf-8" />
+  <title>JavaScript binding POC</title>
 </head>
 <body>
-    <h1>CefSharp Javascript Binding Demo - index.html</h1>
+  <h1>JavaScript binding POC</h1>
 
-    The button below will call a c# method that navigates to http://cefsharp.binding.test
-    <br />
-    <br />
+  <input id="accept" type="button" value="Accept"/>
 
-    <input type="button" id="linkButton" value="Navigate to http://cefsharp.binding.test" data-link="http://cefsharp.binding.test" />
+  <script type="text/javascript">
+    window.onload = () =>
+    {
+      const button = document.getElementById('accept')
+
+      button.onclick = () => CefSharp.PostMessage('reboot windows!')
+    }
+  </script>
 </body>
 </html>
 
