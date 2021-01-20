@@ -8,16 +8,7 @@
 <body>
   <h1>JavaScript binding POC</h1>
 
-  <input id="accept" type="button" value="Accept"/>
-
-  <script type="text/javascript">
-    window.onload = () =>
-    {
-      const button = document.getElementById('accept')
-
-      button.onclick = () => CefSharp.PostMessage('reboot windows!')
-    }
-  </script>
+  <input id="accept" type="button" value="Send Event"/>
 </body>
 </html>
 
