@@ -4,9 +4,19 @@
 <head>
   <meta charset="utf-8" />
   <title>Test</title>
+  <script>
+    function showMessage()
+    {
+      if( AndroidPlayer )
+        AndroidPlayer.showMessage('hola mundo')
+      else
+        console.error( 'no android player' )
+    }
+  </script>
 </head>
 <body>
   <h1>Test</h1>
+  <button onClick="showMessage()">Show Message</button>
 </body>
 </html>
 
