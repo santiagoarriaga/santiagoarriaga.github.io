@@ -7,7 +7,7 @@
   <script>
     function showMessage()
     {
-      if( AndroidPlayer )
+      if( typeof AndroidPlayer !== 'undefined' )
         AndroidPlayer.showMessage('hola mundo')
       else
         console.error( 'no android player' )
