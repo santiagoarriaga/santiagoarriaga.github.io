@@ -4,60 +4,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Test</title>
-    <style>
-      html
-      {
-        margin: 0px;
-        background-color: yellow;
-        height: 100vh;
-      }
-
-      body
-      {
-        margin: 0px;
-        position: absolute;
-        padding: 0px;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        border: 10px black solid;
-        box-sizing: border-box;
-      }
-    </style>
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-
-    <script>
-      function getUrlVars() {
-        var vars = {};
-        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
-        function(m,key,value) {
-          vars[key] = value;
-        });
-        return vars;
-      }
-      (function() {
-        var viewportEl = document.createElement('meta');
-        viewportEl.setAttribute("name", "viewport");
-        var w = getUrlVars()['vw'];
-        var h = getUrlVars()['vh'];
-        var viewportEnabled = getUrlVars()['viewport'];
-        if (viewportEnabled && viewportEnabled !== 'false') {
-          if (w && h) {
-            viewportEl.setAttribute("content", "width=" + w + ", height=" + h);
-            document.getElementsByTagName('head')[0].appendChild(viewportEl);
-          } else {
-            viewportEl.setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1.0");
-            document.getElementsByTagName('head')[0].appendChild(viewportEl);
-          }
-        }
-      }());
-    </script>
   </head>
   <body>
     <div id="all">
       <h1>Test</h1>
+
+      <div style="position:relative;padding-bottom:56.25%;">
+         <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;"
+            frameborder="0" width="100%" height="100%"
+            src="https://widgets.risevision.com/viewer/?type=sharedschedule&id=f4ec7796-66f9-4769-bcf2-8e64008d15ea&env=embed">
+         </iframe>
+      </div>
+      <div style="background:#f2f2f2;color:#020620;font-family:Helvetica;font-size:12px;padding:5px;text-align:center;">
+         Powered by <a href="https://www.risevision.com" target="_blank">Rise Vision</a>
+      </div>
     </div>
   </body>
 </html>
-
