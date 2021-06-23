@@ -6,8 +6,13 @@
     <title>Test</title>
 
     <script>
+      const options =
+      {
+        headers: { 'Bypass-Tunnel-Reminder': '1' }
+      }
+
       const getPage = ( retries = 3 ) =>
-        fetch( 'https://quiet-pig-35.loca.lt/' )
+        fetch( 'https://quiet-pig-35.loca.lt/', options )
         .then( response => response.text() )
         .then( console.log )
         .catch( error =>
