@@ -6,10 +6,20 @@
     <title>Test</title>
 
     <script>
-      fetch( 'https://quiet-pig-35.loca.lt/' )
-      .then( response => response.text() )
-      .then( console.log )
-      .catch( console.warn )
+      const getPage = ( retries = 3 ) =>
+        fetch( 'https://quiet-pig-35.loca.lt/' )
+        .then( response => response.text() )
+        .then( console.log )
+        .catch( error =>
+        {
+          console.warn( `Failed, retries: ${ retries }` )
+          console.warn( error )
+
+          if( retries > 0 )
+            setTimeout( () => getPage( retries - 1 ), 10000 )
+        })
+
+      getPage()
     </script>
   </head>
   <body>
