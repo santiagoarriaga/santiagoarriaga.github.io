@@ -38,6 +38,7 @@
       console.log(`Running video ${videos[index]}`)
       source.setAttribute('src', videos[index])
 
+      video.load()
       video.play()
     }, 10000)
   </script>
