@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="all">
-      <h1>Videos 3</h1>
+      <h1>Videos 4</h1>
 
       <video id="video0" width="320" height="240" style="display: block">
       </video>
@@ -54,6 +54,7 @@
       sources[index].setAttribute('src', files[index])
 
       videos[index].style.display = 'block'
+      videos[index].load()
       videos[index].play()
     }, 1000)
   </script>
