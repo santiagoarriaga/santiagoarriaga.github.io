@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Test Fabric</title>
+
+    <script src="fabric4.js"></script>
+  </head>
+  <body>
+    <div id="all">
+      <h1>Test Fabric</h1>
+
+      <canvas id="canvas" width="400" height="400" style="border:2px solid #000000"></canvas>
+      <script>
+          var canvas = new fabric.Canvas('canvas');
+          canvas.add(new fabric.Circle({ radius: 30, fill: '#f55', top: 100, left: 100 }));
+      </script>
+  </body>
+</html>
