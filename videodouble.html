@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Videos</title>
+  </head>
+  <body>
+    <div id="all">
+      <h1>Video 4</h1>
+
+      <video id="video" width="320" height="240">
+      </video>
+    </div>
+    <div id="all">
+      <h1>Video second</h1>
+
+      <video id="video2" width="320" height="240">
+      </video>
+    </div>
+  </body>
+  <script>
+    var index = 0
+    const base = 'https://storage.googleapis.com/risemedialibrary-7fa5ee92-7deb-450b-a8d5-e5ed648c575f'
+    var file = `${base}/smallfoot.mp4`
+
+    const video = document.getElementById('video')
+    const video2 = document.getElementById('video2')
+    const source = document.createElement('source')
+    const source2 = document.createElement('source')
+
+    source.setAttribute('src', file)
+    source2.setAttribute('src', file)
+    source.setAttribute('type', 'video/mp4')
+    source2.setAttribute('type', 'video/mp4')
+
+    video.appendChild(source)
+    video.play()
+    video2.appendChild(source2)
+    video2.play()
+
+    setInterval(() =>
+    {
+      if( index % 10 === 0 )
+      {
+        video.pause()
+        video2.pause()
+        video.style.display = 'none'
+        video2.style.display = 'none'
+      }
+      else if( index % 10 === 1 )
+      {
+        video.style.display = 'block'
+        video2.style.display = 'block'
+        video.play()
+        video2.play()
+      }
+
+      index = index + 1
+    }, 1000)
+  </script>
+</html>
