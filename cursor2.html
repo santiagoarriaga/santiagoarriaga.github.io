@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Cursor 2</title>
+    <title>Cursor 2a</title>
     <style>
       #layer1 { min-height: 100px; background-color: red ; cursor: pointer; }
       #layer2 { min-height: 100px; background-color: green; }
@@ -27,6 +27,12 @@
     layer.addEventListener('mouseover', () =>
     {
       layer.style.cursor = 'pointer'
+    })
+
+    layer.addEventListener('click', () =>
+    {
+      console.log('click')
+      layer.style.cursor = 'wait'
     })
   </script>
 </html>
