@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cursor 2</title>
+    <style>
+      #layer1 { min-height: 100px; background-color: red ; cursor: pointer; }
+      #layer2 { min-height: 100px; background-color: green; }
+    </style>
+  </head>
+  <body>
+    <div id="all">
+      <h1>Cursor test 2</h1>
+
+      <div id="layer1">
+        Layer 1
+      </div>
+      <div id="layer2">
+        Layer 2
+      </div>
+    </div>
+  </body>
+  <script>
+    const layer = document.getElementById('layer2')
+
+    layer.addEventListener('mouseover', () =>
+    {
+      layer.style.cursor = 'pointer'
+    })
+  </script>
+</html>
